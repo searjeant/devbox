@@ -4,8 +4,8 @@ gsettings set org.gnome.desktop.session idle-delay 0
 
 # Run desktop installers
 for installer in ./desktop/*.sh; do 
-    echo "Installing" $installer
-    # source $installer; 
+    echo "\nInstalling" $installer
+    source $installer; 
 done
 
 # Revert to normal idle and lock settings
