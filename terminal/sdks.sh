@@ -8,8 +8,8 @@ mise use --global node@lts
 # Make the Erlang / Elixir installs separate scripts which we run in a
 # new shell which will have javac on its PATH, so the Erlang jinterface stuff
 # should be installed.
-bash -c "install-erlang"
-bash -c install-elixir
+bash -c terminal/install-erlang
+bash -c terminal/install-elixir
 
 # # Note that the elixir install depends on Erlang being installed and activated
 # mise use --global erlang 
