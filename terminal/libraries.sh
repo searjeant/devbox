@@ -1,5 +1,7 @@
 sudo apt install -y \
-  build-essential pkg-config autoconf bison clang 
+  build-essential pkg-config autoconf bison clang \
+  libssl-dev openssl
+
   #
   # I just don't know that I need all of these myself yet. Comment out for now.
   #

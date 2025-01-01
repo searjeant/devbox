@@ -10,6 +10,8 @@ sudo apt install -y curl git unzip
 # by the directory list - be careful if there are dependencies
 
 for installer in ./terminal/*.sh; do 
-    echo "\nInstalling" $installer
+    echo "----------------------------------"
+    echo "Installing" $installer
+    echo "----------------------------------"
     source $installer; 
 done

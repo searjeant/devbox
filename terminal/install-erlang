@@ -1,0 +1,3 @@
+# Run this in a new shell so the javac installed by devbox is picked up 
+mise use --global erlang 
+

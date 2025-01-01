@@ -1,0 +1,5 @@
+# This depends on Erlang alrerady having been installed.
+mise use --global elixir
+# The next line installs Hex locally
+# See: https://hexdocs.pm/mix/1.18.1/Mix.Tasks.Local.Hex.html
+mise x elixir -- mix local.hex --force

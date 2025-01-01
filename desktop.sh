@@ -4,7 +4,9 @@ gsettings set org.gnome.desktop.session idle-delay 0
 
 # Run desktop installers
 for installer in ./desktop/*.sh; do 
-    echo "\nInstalling" $installer
+    echo "----------------------------------"
+    echo "Installing" $installer
+    echo "----------------------------------"
     source $installer; 
 done
 
