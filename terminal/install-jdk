@@ -1,0 +1,8 @@
+# Ubuntu 24.04's default-jsk is jdk 21 (LTS) which is currently the sensible
+# choice. I don't see much point in using sdkman or other tools to manage
+# multiple versions as I am very unlikely to need them.
+#
+# Also, direct installation like this means the Java binaries are available
+# immediately to downstream scripts, no need to start a new shell.
+
+sudo apt -y install default-jdk

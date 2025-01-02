@@ -1,0 +1,21 @@
+# Install the latest Erlang / OTP release.
+#
+# Without using asdf or mise, this is a slightly clunky process
+# which depends on the OS release to select the right version.
+# I'm using Noble (24.04) and there's currently no specific release for it.
+# Go here: https://binaries2.erlang-solutions.com/#
+# Navigate down to # https://binaries2.erlang-solutions.com/#ubuntu/dists/
+# The latest is Jammy.
+
+# ASDF (which uses Kerl) may be the best option. https://asdf-vm.com/guide/getting-started.html
+
+# Pre-reqs. Probably already there, buit in case:
+sudo apt -y install curl git unzip
+
+# Clone the asdf tool to current user's profile. Don't like the specific branch
+# version, but this is the official guidance.  Would prefer just 'latest'.
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0
+
+# Set up PATH etc. for all new shells.
+echo ". $HOME/.asdf/asdf.sh" >> ~/.bashrc
+echo ". $HOME/.asdf/completions/asdf.bash" >> ~/.bashrc

@@ -1,0 +1,24 @@
+# Install the latest stable version of the Go language and toolchain.
+
+# Using `curl https://go.dev/dl/?mode=json` to retrieve candidate entries.
+# The entries in the JSON output from curl look like this:
+# {
+#     "filename": "go1.23.4.linux-amd64.tar.gz",
+#     "os": "linux",
+#     "arch": "amd64",
+#     "version": "go1.23.4",
+#     "sha256": "6924efde5de86fe277676e929dc9917d466efa02fb934197bc2eba35d5680971",
+#     "size": 73645095,
+#     "kind": "archive"
+# },
+# So the URL for Linux AMD would be: https://go.dev/dl/go1.23.4.linux-amd64.tar.gz
+
+GO_DOWNLOAD_BASE=https://go.dev/dl/
+GOLANG_LATEST_STABLE_VERSION=$(curl https://go.dev/dl/?mode=json | grep -o 'go.*.linux-amd64.tar.gz' | head -n 1)
+URL=$GO_DOWNLOAD_BASE/$GOLANG_LATEST_STABLE_VERSION
+
+cd /tmp
+wget --quiet --continue --show-progress "${URL}"
+sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $GOLANG_LATEST_STABLE_VERSION
+rm $GOLANG_LATEST_STABLE_VERSION
+cd -
