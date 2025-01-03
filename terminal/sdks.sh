@@ -7,6 +7,9 @@
 source terminal/install-go
 source terminal/install-jdk
 source terminal/install-asdf
+# Must run these in new shell to pick up asdf. These scripts must not have 
+# any sudo commands in them - the sudo password won't propagate.
 bash terminal/install-erlang
 bash terminal/install-elixir
+
 # source terminal/install-scala
