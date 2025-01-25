@@ -1,0 +1,51 @@
+#!/usr/bin/env bash
+# Install Clojure + CLI and related tools.
+# See: https://clojure.org/guides/install_clojure#_linux_instructions
+#
+# Assumes Java (JDK) installed. Most recent LTS is best.
+# The Clojure installer script will create:
+# - executables 
+# 	/usr/local/bin/clj
+#	/usr/local/bin/clojure 
+# - directory 
+# 	/usr/local/lib/clojure
+# See below for other tools.
+
+banner() 
+{
+    echo "------------------------------------"
+    echo "Installing" $1
+    echo "------------------------------------"
+}
+
+banner "Clojure language and CLI"
+CLJ_PACKAGE_URL=https://github.com/clojure/brew-install/releases/latest/download/linux-install.sh
+CLJ_SCRIPT=/tmp/clojure-installer
+sudo apt install -y curl rlwrap
+curl -L CLJ_PACKAGE_URL -o $CLJ_SCRIPT
+chmod +x $CLJ_SCRIPT
+sudo $CLJ_SCRIPT
+
+banner "Babashka"
+BABASHKA_URL=https://raw.githubusercontent.com/babashka/babashka/master/install
+BAB_SCRIPT=/tmp/babashka-installer
+curl -sL $BABASHKA_URL -o $BAB_SCRIPT
+chmod +x $BAB_SCRIPT
+sudo $BAB_SCRIPT
+
+banner "Neil"
+# Get the neil CLI tool: https://github.com/babashka/neil
+# How to use: https://blog.michielborkent.nl/new-clojure-project-quickstart.html
+NEIL_URL=https://raw.githubusercontent.com/babashka/neil/main/neil
+curl -sL $NEIL_URL -o ~/bin/neil
+chmod +x ~/bin/neil
+
+banner "Leiningen"
+# Also install Leiningen. Plenty of projects still use it
+# and it is still a superb piece of work.
+# See: https://leiningen.org/#install
+LEIN_URL=https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+curl -sL $LEIN_URL -o ~/bin/lein
+chmod +x ~/bin/lein
+# And run it, so it will download the self-install package
+bash ~/bin/lein

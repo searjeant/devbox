@@ -2,7 +2,7 @@
 # Depends on some library pre-reqs: libraries.sh should already
 # have installed these.
 # Depends on asdf, so this should run after install-asdf.
-# Also, this needs to be run in a new shell (bash -c <name>) 
+# Also, this needs to be run in a new shell 
 # so that asdf's shell config is picked up.
 
 # Add the Erlang plugin. See https://github.com/asdf-vm/asdf-erlang

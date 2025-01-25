@@ -12,6 +12,9 @@
 # Pre-reqs. Probably already there, buit in case:
 sudo apt -y install curl git unzip
 
+# If the ~/.asdf directory already exists, the clone below will fail.
+rm -rf ~/.asdf
+
 # Clone the asdf tool to current user's profile. Don't like the specific branch
 # version, but this is the official guidance.  Would prefer just 'latest'.
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.15.0

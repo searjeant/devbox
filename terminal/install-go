@@ -22,3 +22,8 @@ wget --quiet --continue --show-progress "${URL}"
 sudo rm -rf /usr/local/go && sudo tar -C /usr/local -xzf $GOLANG_LATEST_STABLE_VERSION
 rm $GOLANG_LATEST_STABLE_VERSION
 cd -
+
+# Get the Go binary onto PATH. Ideally check for this line first and only
+# add if not present.
+echo "PATH=$PATH:/usr/local/go/bin" >> ~/.bashrc
+
